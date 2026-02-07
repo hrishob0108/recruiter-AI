@@ -2,7 +2,6 @@
 
 A high-converting, modern landing page for an AI recruitment SaaS. Built with **React**, **Vite**, and **Tailwind CSS v4**.
 
-![RecruiterAI Preview](public/vite.svg) *Add a screenshot here*
 
 ## ✨ Features
 
