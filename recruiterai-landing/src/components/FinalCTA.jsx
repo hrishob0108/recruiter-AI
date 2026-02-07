@@ -3,10 +3,8 @@ import { Reveal } from "./utils/Reveal"
 export default function FinalCTA() {
   return (
     <section className="bg-gray-900 overflow-hidden relative">
-      {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-dark via-[#1e1b4b] to-black opacity-90" />
 
-      {/* Decorative Blur */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-primary/20 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="relative max-w-5xl mx-auto px-6 pt-32 pb-16 text-center">
@@ -32,7 +30,6 @@ export default function FinalCTA() {
           </div>
         </Reveal>
 
-        {/* Footer */}
         <Reveal delay={400}>
           <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 gap-4">
             <div>

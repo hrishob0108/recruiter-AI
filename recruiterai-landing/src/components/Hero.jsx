@@ -3,11 +3,8 @@ import { Reveal } from "./utils/Reveal"
 export default function Hero() {
   return (
     <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
-
-      {/* Background Gradient Blob */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary/5 rounded-full blur-3xl -z-10 pointer-events-none" />
 
-      {/* ===== CENTRAL CONTENT ===== */}
       <div className="relative z-10 text-center max-w-4xl px-4 mt-10 mx-auto">
         <Reveal>
           <h1 className="text-6xl md:text-8xl font-serif text-primary-dark mb-6 leading-tight">
@@ -35,10 +32,7 @@ export default function Hero() {
         </Reveal>
       </div>
 
-      {/* ===== FLOATING WIDGETS (Hidden on mobile, visible on lg screens) ===== */}
       <div className="hidden lg:block absolute inset-0 pointer-events-none">
-
-        {/* 1. TOP LEFT: Sarah K. */}
         <div className="absolute top-[15%] left-[2%] z-20">
           <Reveal delay={600} className="float w-72">
             <div className="card bg-white p-5 shadow-xl border border-primary/10 rounded-2xl relative">
@@ -59,7 +53,6 @@ export default function Hero() {
           </Reveal>
         </div>
 
-        {/* 2. TOP RIGHT: Rahul M. */}
         <div className="absolute top-[18%] right-[2%] z-20">
           <Reveal delay={800} className="float-delayed w-72">
             <div className="card bg-white p-5 shadow-xl border border-primary/10 rounded-2xl relative">
@@ -80,7 +73,6 @@ export default function Hero() {
           </Reveal>
         </div>
 
-        {/* 3. BOTTOM LEFT: Priya S. */}
         <div className="absolute bottom-[12%] left-[2%] z-20">
           <Reveal delay={1000} className="float-delayed w-72">
             <div className="card bg-white p-5 shadow-xl border border-primary/10 rounded-2xl relative">
@@ -101,7 +93,6 @@ export default function Hero() {
           </Reveal>
         </div>
 
-        {/* 4. BOTTOM RIGHT: Amit T. */}
         <div className="absolute bottom-[18%] right-[2%] z-20">
           <Reveal delay={1200} className="float w-72">
             <div className="card bg-white p-5 shadow-xl border border-primary/10 rounded-2xl relative">
@@ -121,7 +112,6 @@ export default function Hero() {
             </div>
           </Reveal>
         </div>
-
       </div>
     </section>
   )

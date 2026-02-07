@@ -5,7 +5,7 @@ const FLOWS = {
     id: 'screening',
     title: 'Automated Screening',
     description: 'Screen 250+ applications in minutes vs. 8 hours manually.',
-    theme: 'primary', // Blue
+    theme: 'primary',
     metric: { label: 'Efficiency', value: '8 hrs → Mins', title: 'Screening Time' },
     nodes: [
       { icon: '📄', theme: 'primary', title: 'New Application', sub: 'Submitted' },
@@ -26,7 +26,7 @@ const FLOWS = {
     id: 'interview',
     title: 'Multi-Stage Interview',
     description: 'Reduce time-to-hire from 42 days to 12 days.',
-    theme: 'accent3', // Purple
+    theme: 'accent3',
     metric: { label: 'Velocity', value: '42d → 12d', title: 'Time-to-Hire' },
     nodes: [
       { icon: '🎥', theme: 'accent1', title: 'AI Video Interview', sub: 'Technical Screen' },
@@ -47,7 +47,7 @@ const FLOWS = {
     id: 'nurture',
     title: 'Passive Re-engagement',
     description: 'Build a qualified talent pipeline automatically.',
-    theme: 'accent1', // Light Blue
+    theme: 'accent1',
     metric: { label: 'Pipeline', value: '+300%', title: 'Talent Pool' },
     nodes: [
       { icon: '📂', theme: 'accent2', title: 'Future Talent', sub: 'Silver Medalists' },
@@ -66,11 +66,10 @@ const FLOWS = {
   }
 }
 
-// Helper to get tailwind classes for themes
 const getThemeClasses = (theme) => {
   switch (theme) {
     case 'primary': return { bg: 'bg-primary/10', border: 'border-primary/20', text: 'text-primary', iconBg: 'bg-primary/20', iconColor: 'text-primary' }
-    case 'accent1': return { bg: 'bg-accent1/20', border: 'border-accent1/30', text: 'text-primary', iconBg: 'bg-accent1/30', iconColor: 'text-primary' } // dark text for visibility
+    case 'accent1': return { bg: 'bg-accent1/20', border: 'border-accent1/30', text: 'text-primary', iconBg: 'bg-accent1/30', iconColor: 'text-primary' }
     case 'accent2': return { bg: 'bg-accent2/20', border: 'border-accent2/30', text: 'text-accent3', iconBg: 'bg-accent2/30', iconColor: 'text-accent3' }
     case 'accent3': return { bg: 'bg-accent3/10', border: 'border-accent3/20', text: 'text-accent3', iconBg: 'bg-accent3/20', iconColor: 'text-accent3' }
     default: return { bg: 'bg-gray-50', border: 'border-gray-200', text: 'text-gray-600', iconBg: 'bg-gray-100', iconColor: 'text-gray-500' }
@@ -85,7 +84,6 @@ export default function Flowcharts() {
   return (
     <section className="relative w-full overflow-hidden bg-[#3B82F6] min-h-[900px] text-white py-20 px-4 md:px-8 font-sans transition-colors duration-500">
 
-      {/* ===== GRID BACKGROUND ===== */}
       <div
         className="absolute inset-0 opacity-20 pointer-events-none"
         style={{
@@ -99,7 +97,6 @@ export default function Flowcharts() {
 
       <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-start justify-between relative z-10 gap-16 lg:gap-8">
 
-        {/* ===== LEFT CONTENT: TABS & COPY ===== */}
         <div className="lg:w-1/3 flex flex-col space-y-8 pt-10">
           <div>
             <div className="flex items-center gap-2 text-xs font-bold tracking-widest uppercase opacity-70 mb-4">
@@ -116,7 +113,6 @@ export default function Flowcharts() {
             </p>
           </div>
 
-          {/* TABS */}
           <div className="flex flex-col gap-2">
             {Object.values(FLOWS).map((flow) => (
               <button
@@ -151,10 +147,8 @@ export default function Flowcharts() {
           </div>
         </div>
 
-        {/* ===== RIGHT CONTENT: UI MOCKUPS (DYNAMIC) ===== */}
         <div className="lg:w-2/3 relative w-full h-[600px] md:h-[700px]">
 
-          {/* 1. METRICS CARD (Back Left) */}
           <div
             key={`metric-${activeFlow}`}
             className="absolute top-32 left-0 md:left-4 w-72 md:w-80 bg-white rounded-xl shadow-2xl p-4 text-gray-800 z-30 transform -rotate-2 origin-bottom-right animate-float-delayed border border-gray-100/50 transition-all duration-500"
@@ -174,7 +168,6 @@ export default function Flowcharts() {
             </div>
           </div>
 
-          {/* 2. STORYBOARD CARD (Center - Main) */}
           <div
             key={`story-${activeFlow}`}
             className="absolute top-0 left-8 md:left-48 right-0 md:right-32 bottom-20 bg-white rounded-xl shadow-2xl overflow-hidden z-20 border border-gray-100/50 flex flex-col transition-all duration-500"
@@ -182,20 +175,16 @@ export default function Flowcharts() {
             <div className="bg-white border-b border-gray-100 p-3 flex items-center gap-2 text-primary font-bold text-sm">
               <span className="text-lg">⚡</span> {current.title}
             </div>
-            {/* Canvas Pattern */}
             <div className="flex-1 relative bg-gray-50 p-4">
               <div className="absolute inset-0 opacity-20 pointer-events-none"
                 style={{ backgroundImage: 'radial-gradient(#cbd5e1 1px, transparent 1px)', backgroundSize: '16px 16px' }}>
               </div>
 
-              {/* Flow Nodes */}
               <div className="flex flex-col items-center space-y-8 relative z-10 animate-fade-in-up">
-                {/* SVG Connecting Line */}
                 <svg className="absolute inset-0 w-full h-full pointer-events-none overflow-visible" style={{ zIndex: -1 }}>
                   <path d="M 50% 40 L 50% 300" stroke="#CBD5E1" strokeWidth="2" fill="none" />
                 </svg>
 
-                {/* Nodes Loop */}
                 {current.nodes.map((node, i) => {
                   const styles = getThemeClasses(node.theme)
                   return (
@@ -215,7 +204,6 @@ export default function Flowcharts() {
             </div>
           </div>
 
-          {/* 3. WORKBENCH CARD (Floating Right) */}
           <div
             key={`bench-${activeFlow}`}
             className="absolute top-24 right-0 md:right-10 w-72 md:w-80 bg-white rounded-xl shadow-2xl p-4 text-gray-800 z-30 transform rotate-2 animate-float border border-primary/10 ring-4 ring-white/20 transition-all duration-500"
@@ -234,7 +222,6 @@ export default function Flowcharts() {
                 </div>
               )}
 
-              {/* Action Items */}
               {current.chat.messages.slice(1).map((msg, i) => {
                 const styles = getThemeClasses(msg.theme)
                 return (
@@ -257,7 +244,6 @@ export default function Flowcharts() {
             </div>
           </div>
 
-          {/* Decorative Bell */}
           <div className="absolute -top-6 right-20 w-12 h-12 bg-[#FFD6A5] rounded-full border-4 border-white z-40 flex items-center justify-center text-xl shadow-lg animate-bounce">
             ✨
           </div>

@@ -21,7 +21,6 @@ export default function Logos() {
     { name: "IIMJobs", url: iimjobs },
   ]
 
-  // Duplicate list for infinite scroll
   const loopLogos = [...logos, ...logos]
 
   return (
@@ -36,7 +35,6 @@ export default function Logos() {
       "
     >
       <div className="max-w-7xl mx-auto text-center">
-        {/* Heading */}
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
           Post Once, Reach Everywhere
         </h2>
@@ -47,7 +45,6 @@ export default function Logos() {
       </div>
 
       <div className="relative mt-16 overflow-hidden">
-        {/* Gradient Masks */}
         <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-lightBg to-transparent z-10 pointer-events-none" />
         <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-lightBg to-transparent z-10 pointer-events-none" />
 
@@ -79,7 +76,6 @@ export default function Logos() {
                 onError={(e) => {
                   e.target.style.display = 'none';
                   e.target.parentElement.innerText = logo.name;
-                  // Styled Fallback
                   e.target.parentElement.className = "text-xl font-serif font-bold text-gray-800 flex justify-center items-center h-full w-full";
                 }}
               />

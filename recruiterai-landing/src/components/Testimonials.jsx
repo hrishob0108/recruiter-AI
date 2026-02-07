@@ -7,7 +7,7 @@ const testimonials = [
     name: "Rahul Mehta",
     role: "Founder",
     company: "TechStart Solutions",
-    accent: "border-t-[#3B82F6]", // Primary Blue
+    accent: "border-t-[#3B82F6]",
   },
   {
     quote:
@@ -15,7 +15,7 @@ const testimonials = [
     name: "Priya Sharma",
     role: "Head of HR",
     company: "ScaleUp Labs",
-    accent: "border-t-[#9333EA]", // Purple
+    accent: "border-t-[#9333EA]",
   },
   {
     quote:
@@ -23,14 +23,13 @@ const testimonials = [
     name: "Amit Verma",
     role: "CEO",
     company: "InnovateWorks",
-    accent: "border-t-[#06B6D4]", // Cyan
+    accent: "border-t-[#06B6D4]",
   },
 ]
 
 export default function Testimonials() {
   return (
     <section className="py-24 bg-white relative overflow-hidden">
-      {/* Decorative Background Blob */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -57,7 +56,6 @@ export default function Testimonials() {
                 `}
               >
                 <div>
-                  {/* Quote Icon */}
                   <div className="text-6xl font-serif text-gray-100 leading-none mb-4 -ml-2">
                     “
                   </div>

@@ -12,19 +12,19 @@ export default function Metrics() {
       title: "Faster Time-to-Hire",
       value: "70%",
       description: "Average hiring timeline drops from 42 days to just 12 days.",
-      theme: "accent1" // #A5D8FF
+      theme: "accent1"
     },
     {
       title: "More Interview Capacity",
       value: "25×",
       description: "AI conducts 200+ automated screening interviews daily vs 8 manual calls.",
-      theme: "accent2" // #D0BCFF
+      theme: "accent2"
     },
     {
       title: "Application Completion",
       value: "95%",
       description: "Smart application forms reduce candidate drop-off dramatically.",
-      theme: "accent3" // #B197FC
+      theme: "accent3"
     },
     {
       title: "More Qualified Applications",
@@ -46,11 +46,8 @@ export default function Metrics() {
     }
   ]
 
-
-  // Duplicate for infinite loop
   const loopMetrics = [...metrics, ...metrics]
 
-  // Helper for card themes
   const getTheme = (theme) => {
     switch (theme) {
       case 'accent1': return 'bg-[#A5D8FF] text-blue-900'
@@ -76,10 +73,8 @@ export default function Metrics() {
         </Reveal>
       </div>
 
-      {/* Infinite Slider Track */}
       <Reveal delay={200}>
         <div className="relative w-full overflow-hidden mb-24">
-          {/* Gradient Masks for smooth fade out at edges */}
           <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none" />
           <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none" />
 
@@ -113,7 +108,6 @@ export default function Metrics() {
         </div>
       </Reveal>
 
-      {/* Bar Graph Visualization */}
       <div className="max-w-5xl mx-auto px-4">
         <Reveal delay={400}>
           <div className="text-center mb-12">
@@ -122,7 +116,6 @@ export default function Metrics() {
           </div>
 
           <div className="flex justify-center gap-4 md:gap-12 h-64 md:h-80 w-full">
-            {/* 1. Time to Hire (70%) */}
             <div className="flex flex-col items-center gap-3 group w-24 h-full">
               <div className="text-3xl font-bold text-blue-600 group-hover:scale-110 transition-transform">70%</div>
               <div className="flex-1 w-full bg-gray-100 rounded-t-xl relative overflow-hidden flex flex-col justify-end">
@@ -131,7 +124,6 @@ export default function Metrics() {
               <div className="text-xs font-bold text-gray-500 uppercase tracking-wider text-center h-8">Faster<br />Time-to-Hire</div>
             </div>
 
-            {/* 2. Completion (95%) */}
             <div className="flex flex-col items-center gap-3 group w-24 h-full">
               <div className="text-3xl font-bold text-purple-600 group-hover:scale-110 transition-transform">95%</div>
               <div className="flex-1 w-full bg-gray-100 rounded-t-xl relative overflow-hidden flex flex-col justify-end">
@@ -140,7 +132,6 @@ export default function Metrics() {
               <div className="text-xs font-bold text-gray-500 uppercase tracking-wider text-center h-8">App<br />Completion</div>
             </div>
 
-            {/* 3. Qualified (89%) */}
             <div className="flex flex-col items-center gap-3 group w-24 h-full">
               <div className="text-3xl font-bold text-blue-600 group-hover:scale-110 transition-transform">89%</div>
               <div className="flex-1 w-full bg-gray-100 rounded-t-xl relative overflow-hidden flex flex-col justify-end">
@@ -149,7 +140,6 @@ export default function Metrics() {
               <div className="text-xs font-bold text-gray-500 uppercase tracking-wider text-center h-8">Qualified<br />Apps</div>
             </div>
 
-            {/* 4. Costs (80%) */}
             <div className="flex flex-col items-center gap-3 group w-24 h-full">
               <div className="text-3xl font-bold text-cyan-600 group-hover:scale-110 transition-transform">80%</div>
               <div className="flex-1 w-full bg-gray-100 rounded-t-xl relative overflow-hidden flex flex-col justify-end">
@@ -158,7 +148,6 @@ export default function Metrics() {
               <div className="text-xs font-bold text-gray-500 uppercase tracking-wider text-center h-8">Lower<br />Costs</div>
             </div>
 
-            {/* 5. Bad Hires (50%) */}
             <div className="flex flex-col items-center gap-3 group w-24 h-full">
               <div className="text-3xl font-bold text-purple-600 group-hover:scale-110 transition-transform">50%</div>
               <div className="flex-1 w-full bg-gray-100 rounded-t-xl relative overflow-hidden flex flex-col justify-end">

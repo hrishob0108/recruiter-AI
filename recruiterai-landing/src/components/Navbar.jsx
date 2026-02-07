@@ -27,14 +27,12 @@ export default function Navbar() {
           justify-between
         "
       >
-        {/* Logo */}
         <div className="flex items-center gap-2">
           <div className="text-2xl font-bold text-gray-900 tracking-tight">
             Recruiter<span className="text-primary">AI</span>
           </div>
         </div>
 
-        {/* Desktop Nav */}
         <nav
           className="
             hidden
@@ -106,7 +104,6 @@ export default function Navbar() {
           </button>
         </nav>
 
-        {/* Mobile menu button */}
         <button
           className="
             md:hidden
@@ -121,7 +118,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {open && (
         <div
           className="
