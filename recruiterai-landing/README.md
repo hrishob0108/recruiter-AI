@@ -1,16 +1,104 @@
-# React + Vite
+# RecruiterAI Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A high-converting, modern landing page for an AI recruitment SaaS. Built with **React**, **Vite**, and **Tailwind CSS v4**.
 
-Currently, two official plugins are available:
+![RecruiterAI Preview](public/vite.svg) *Add a screenshot here*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+-   **Premium Design**: Inspired by "Tines" and "Linear" aesthetics, featuring a clean layout, serif typography (*Playfair Display*), and a professional Blue/Purple color palette.
+-   **Interactive Flowcharts**: A dynamic "How it Works" section with tabbed switching (Screening, Interview, Re-engagement).
+-   **Data Visualization**: Custom bar graphs and infinite loop sliders to showcase metrics and social proof.
+-   **Scroll Animations**: Smooth, staggered entrance animations using a custom `Reveal` component (IntersectionObserver) + CSS keyframes.
+-   **Floating Widgets**: Interactive testimonial cards in the Hero section that float and reveal on scroll.
+-   **Responsive**: Fully optimized for mobile, tablet, and desktop screens.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## � Landing Page Structure
 
-## Expanding the ESLint configuration
+The page follows a high-conversion narrative flow:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1.  **Hero Section**: Captures attention immediately with a value-driven headline, social proof (floating testimonial widgets), and clear dual CTAs.
+2.  **Interactive Flowcharts**: Breaks down the complex AI process into 3 simple, digestible steps (Screening, Interview, Re-engagement) using a tabbed interface.
+3.  **Metrics & Analysis**: Combines an infinite loop of benefits with a hard-data bar graph to appeal to analytical buyers.
+4.  **Social Proof**:
+    *   **Logos**: An infinite scrolling marquee of trusted companies (grayscale to color on hover).
+    *   **Testimonials**: "Tines-style" cards with specific results and colorful accents to build trust.
+5.  **FAQ**: Addressing common objections (ATS integration, security) in a clean accordion format.
+6.  **Final CTA**: A strong, gradient-backed footer to catch users at the bottom of the scroll.
+
+## 🎨 Design System ("The Tines Look")
+
+We strictly adhered to a premium aesthetic:
+-   **Typography**: *Playfair Display* for sophisticated headings vs. *Inter* for clean, readable UI text.
+-   **Palette**: A cool, trustworthy base of White/Gray with vivid accents:
+    -   `Primary Blue` (#3B82F6) -> Action & Trust
+    -   `Purple` (#9333EA) -> AI & Magic
+    -   `Cyan` (#06B6D4) -> Speed & Clarity
+-   **Interaction**: Everything feels alive. Buttons glow, cards lift on hover, and content cascades in as you scroll.
+
+## �🛠️ Tech Stack
+
+-   **Framework**: [React 19](https://react.dev/)
+-   **Build Tool**: [Vite](https://vitejs.dev/)
+-   **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+-   **Fonts**: [Google Fonts](https://fonts.google.com/) (Playfair Display & Inter)
+-   **Icons**: SVGs & PNG assets
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+-   Node.js (v18 or higher)
+-   npm or yarn
+
+### Installation
+
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/hrishob0108/recruiter-AI.git
+    cd recruiterai-landing
+    ```
+
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
+
+3.  **Start the development server**
+    ```bash
+    npm run dev
+    ```
+
+4.  Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## 📂 Project Structure
+
+```
+src/
+├── assets/           # Images and logos
+│   └── logos/        # Company logos for the infinite slider
+├── components/       # React components
+│   ├── utils/        # Utility components (Reveal.jsx)
+│   ├── Hero.jsx      # Main hero section with floating cards
+│   ├── Metrics.jsx   # Stats slider and bar graph
+│   └── ...
+├── index.css         # Tailwind directives and custom animations
+├── App.jsx           # Main application entry
+└── main.jsx          # React DOM root
+```
+
+## 🎨 Customization
+
+### Colors
+The project uses a semantic color scale defined in `src/index.css`:
+
+-   `--color-primary`: `#3B82F6` (Blue)
+-   `--color-accent1`: `#A5D8FF` (Light Blue)
+-   `--color-accent2`: `#D0BCFF` (Lavender)
+-   `--color-accent3`: `#B197FC` (Purple)
+
+### Animations
+Animations are handled by:
+1.  **CSS Keyframes** in `index.css` (`fade-in-up`, `logo-scroll`).
+2.  **Reveal Component** in `src/components/utils/Reveal.jsx` which triggers classes when elements enter the viewport.
+
